@@ -1,19 +1,18 @@
 import React from 'react';
 
 import GoodsItem from './GoodsItem';
+import { Grid2 } from '@mui/material';
 
 const GoodsList = (props) => {
-    const { goods, setOrder } = props;
+  const { goods, setOrder } = props;
 
-    return (
-        <div className='goods-list col-md-8'>
-            <div className='row'>
-                {goods.map((item) => (
-                    <GoodsItem key={item.id} setOrder={setOrder} {...item} />
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <Grid2 container spacing={2}>
+      {goods.map((item) => (
+        <GoodsItem key={item.id} setOrder={setOrder} {...item} />
+      ))}
+    </Grid2>
+  );
 };
 
 export default GoodsList;
